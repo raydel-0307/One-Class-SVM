@@ -21,8 +21,8 @@ El modelo utilizado es `sklearn.svm.OneClassSVM`, con la posibilidad de ajustar 
 
 ```json
 {
- "json_file":"interest_048.json", //Archivo JSON con datos (ruta de los datos de interes)
- "features" : [         //Lista de imputs utilizados para el entrenamiento y la predicción
+ "json_file":"interest_048.json",
+ "features" : [
   "intTskTime",
   "intTskStatus",
   "intPrjCollaborators",
@@ -30,12 +30,12 @@ El modelo utilizado es `sklearn.svm.OneClassSVM`, con la posibilidad de ajustar 
   "intPrjType",
   "intTskType"
  ],
- "categorical_features":[    //Lista de inputs categóricos que requieren codificación One-Hot
+ "categorical_features":[
   "intTskStatus",
   "intPrjType",
   "intTskType"
  ],
- "input_data":{         //Ejemplo de datos de entrada para predicción
+ "input_data":{
   "intTskTime": 120,
   "intTskStatus": "No finalizado",
   "intPrjCollaborators": 10,
@@ -43,18 +43,18 @@ El modelo utilizado es `sklearn.svm.OneClassSVM`, con la posibilidad de ajustar 
   "intPrjType": "Desarrollo",
   "intTskType": "Desarrollo"
  },
- "settings":{          //Configuración de los parámetros del modelo y el preprocesamiento
+ "settings":{
   "OneHotEncoder":{
    "handle_unknown":"ignore",
    "sparse_output":false
   },
   "OneClassSVM":{
-   "nu":0.1,        //Parámetro nu del OneClassSVM
-   "kernel":"rbf",      //Kernel utilizado en el OneClassSVM
-   "gamma":0.1       //Parámetro gamma del OneClassSVM
+   "nu":0.1,
+   "kernel":"rbf",
+   "gamma":0.1
   },
   "pandas":{
-   "axis":1         //Parámetro axis para pandas (se utiliza en el preprocesamiento)
+   "axis":1
   }
  }
 }
@@ -64,9 +64,13 @@ El modelo utilizado es `sklearn.svm.OneClassSVM`, con la posibilidad de ajustar 
 ### Explicación de los campos:
 
 • "json_file": Ruta al archivo JSON que contiene los datos de entrenamiento.
+
 • "features": Lista de nombres de columnas que se utilizarán como inputs para el modelo.
+
 • "categorical_features": Subconjunto de "features" que son variables categóricas.
+
 • "input_data": Un ejemplo de datos de entrada para realizar una predicción.
+
 • "settings": Contiene la configuración de los parámetros para OneHotEncoder y OneClassSVM.
 
 
