@@ -1,0 +1,38 @@
+{
+	"json_file":"interest_048.json",
+	"features" : [
+		"intTskTime",
+		"intTskStatus",
+		"intPrjCollaborators",
+		"intPrjFiles",
+		"intPrjType",
+		"intTskType"
+	],
+	"categorical_features":[
+		"intTskStatus",
+		"intPrjType",
+		"intTskType"
+	],
+	"input_data":{
+		"intTskTime": 120,
+		"intTskStatus": "No finalizado",
+		"intPrjCollaborators": 10,
+		"intPrjFiles": 8,
+		"intPrjType": "Desarrollo",
+		"intTskType": "Desarrollo"
+	},
+	"settings":{
+		"OneHotEncoder":{
+			"handle_unknown":"ignore",
+			"sparse_output":false
+		},
+		"OneClassSVM":{
+			"nu":0.1,
+			"kernel":"rbf",
+			"gamma":0.1
+		},
+		"pandas":{
+			"axis":1
+		}
+	}
+}
